@@ -1,5 +1,9 @@
 # CLAUDE.md
 
+## Communication
+
+Be concise. Short answers, minimal preamble. No over-explaining.
+
 ## Landing changes on `main`
 
 Direct `git push` to `main` is blocked by the environment's branch lock
