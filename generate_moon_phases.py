@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from enum import Enum
 from pathlib import Path
@@ -19,7 +19,7 @@ from typing import Callable
 import ephem
 from icalendar import Calendar, Event
 
-PRODID = "-//Lunar-Moon//Moon Phases//EN"
+PRODID = "-//Moon-Phases//Moon Phases//EN"
 EVENT_DURATION = timedelta(minutes=1)
 
 
@@ -54,7 +54,7 @@ class PhaseEvent:
     """A single dated lunar phase."""
 
     when: datetime
-    phase: Phase
+    phase: Phase = field(compare=False)
 
     @property
     def summary(self) -> str:
